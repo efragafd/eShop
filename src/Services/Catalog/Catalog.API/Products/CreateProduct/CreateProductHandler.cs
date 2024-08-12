@@ -5,6 +5,17 @@ public record CreateProductCommand(string Name, List<string> Category, string De
 
 public record CreateProductResult(Guid Id);
 
+public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
+{
+    public CreateProductCommandValidator()
+    {
+        RuleFor(r => r.Name).NotEmpty().WithMessage("Name is required");
+        RuleFor(r => r.Category).NotEmpty().WithMessage("Category is required");
+        RuleFor(r => r.ImageFile).NotEmpty().WithMessage("ImageFile is required");
+        RuleFor(r => r.Price).GreaterThan(0).WithMessage("Price must be greater than zero");
+    }
+}
+
 internal class CreateProductCommandHandler(IDocumentSession session)
     : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
