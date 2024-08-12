@@ -1,9 +1,11 @@
 ﻿global using Carter;
+global using FluentValidation;
+global using HealthChecks.UI.Client;
 global using Mapster;
 global using MediatR;
 global using Marten;
 global using Marten.Pagination;
-global using FluentValidation;
+global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 global using BuildingBlocks.Behaviors;
 global using BuildingBlocks.CQRS;
