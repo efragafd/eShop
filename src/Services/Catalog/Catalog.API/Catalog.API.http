@@ -1,0 +1,18 @@
+# https url
+@Catalog_API_Host = https://localhost:5050
+# docker url
+# @Catalog_API_Host = https://localhost:32771
+
+POST {{Catalog_API_Host}}/products
+Content-Type: application/json
+{
+    "Name": "Sample product B",
+    "Category": ["c1", "c2"],
+    "Description": "Product sample type B",
+    "ImageFile": "location/of/file",
+    "Price": 199
+}
+
+###
+
+GET {{Catalog_API_Host}}/products
