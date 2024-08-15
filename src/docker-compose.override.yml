@@ -31,6 +31,16 @@ services:
     ports:
       - "6379:6379"
 
+  orderdb:
+    container_name: orderdb
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=eShop123*
+    restart: always
+    ports:
+    # Need to conect to 1444 because of SQL Server already running on 1433
+      - "1444:1433"
+
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
