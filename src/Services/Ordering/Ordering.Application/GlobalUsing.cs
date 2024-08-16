@@ -3,6 +3,7 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.Logging;
 
 global using BuildingBlocks.CQRS;
+global using BuildingBlocks.Pagination;
 
 global using Ordering.Domain.Events;
 global using Ordering.Domain.Models;
